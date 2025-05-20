@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config, Csv
 from datetime import timedelta
 import json
+import sentry_sdk
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -213,3 +214,10 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+sentry_sdk.init(
+    dsn="https://38ef9294c64f41304cbe03c1f057ba52@o518522.ingest.us.sentry.io/4509357399539712",
+    integrations=[DjangoIntegration()],
+    traces_sample_rate=1.0,
+    send_default_pii=True
+)
