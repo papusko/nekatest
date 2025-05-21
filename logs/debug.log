@@ -739,3 +739,10 @@ ImportError: Could not import 'config.exceptions.exception.custom_exception_hand
 [INFO] 2025-05-21 17:16:09,240 django.utils.autoreload - Watching for file changes with StatReloader
 [INFO] 2025-05-21 17:16:21,089 django.utils.autoreload - C:\Users\kone\Documents\socisarl\scrum\apps\users\views.py changed, reloading.
 [INFO] 2025-05-21 17:16:29,302 django.utils.autoreload - Watching for file changes with StatReloader
+[INFO] 2025-05-21 17:25:32,093 django - [REGISTER] Tentative de création: {'username': 'amiad', 'email': 'anid@yopmail.com', 'password': 'test1234', 'role': 'product_owner'}
+[INFO] 2025-05-21 17:25:34,725 django - [REGISTER SUCCESS] Utilisateur créé: {'id': 7, 'username': 'Amiad', 'email': 'anid@yopmail.com', 'role': 'product_owner'}
+[DEBUG] 2025-05-21 17:25:34,767 urllib3.connectionpool - Starting new HTTPS connection (1): o518522.ingest.us.sentry.io:443
+[DEBUG] 2025-05-21 17:25:38,209 urllib3.connectionpool - https://o518522.ingest.us.sentry.io:443 "POST /api/4509357399539712/envelope/ HTTP/1.1" 200 0
+[DEBUG] 2025-05-21 17:26:35,124 urllib3.connectionpool - https://o518522.ingest.us.sentry.io:443 "POST /api/4509357399539712/envelope/ HTTP/1.1" 200 0
+[INFO] 2025-05-21 20:31:31,151 django.utils.autoreload - C:\Users\kone\Documents\socisarl\scrum\apps\users\views.py changed, reloading.
+[INFO] 2025-05-21 20:31:41,764 django.utils.autoreload - Watching for file changes with StatReloader

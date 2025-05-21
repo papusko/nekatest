@@ -29,7 +29,7 @@ class RegisterView(generics.CreateAPIView):
             logger.error(f"[REGISTER ERROR] Erreur: {str(e)}", exc_info=True)
             capture_exception(e)
             return Response(
-                {"detail": "Une erreur est survenue lors de l'inscription."},
+                {"detail": "Une erreur est survenue aussi lors de l'inscription."},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
