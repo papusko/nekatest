@@ -14,7 +14,10 @@ from pathlib import Path
 from decouple import config, Csv
 from datetime import timedelta
 import json
+import os
 import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,6 +121,7 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 3,  # ici definirons le Nombre d’objets par page par défaut
+    'EXCEPTION_HANDLER': 'core.middleware.exceptions.exceptions.custom_exception_handler',
 }
 
 BLEACH_ALLOWED_TAGS = config("BLEACH_ALLOWED_TAGS", cast=Csv(), default="b,i,u")
@@ -201,7 +205,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/debug.log'),
+            'filename': 'logs/debug.log',
             'formatter': 'verbose',
         },
         'console': {
@@ -214,6 +218,8 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+
 
 sentry_sdk.init(
     dsn="https://38ef9294c64f41304cbe03c1f057ba52@o518522.ingest.us.sentry.io/4509357399539712",
